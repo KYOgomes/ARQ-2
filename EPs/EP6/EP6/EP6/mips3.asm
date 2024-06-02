@@ -1,0 +1,20 @@
+# Associação     x->$s0  y->$s1        # x=3   y=4    y=(15x + 67y) * 4
+ori $s0, $zero, 3  # x = 3
+ori $s1, $zero, 4  # y = 4
+add $t0, $s0, $s0  # t0 = 2x
+add $t0, $t0, $t0  # t0 = 4x
+add $t0, $t0, $t0  # t0 = 8x
+add $t0, $t0, $t0  # t0 = 16x
+sub $s0, $t0, $s0  # x = 16x - x | 15x
+add $t0, $s1, $s1  # t0 = 2y
+add $t0, $t0, $t0  # t0 = 4y
+add $t0, $t0, $t0  # t0 = 8y
+add $t0, $t0, $t0  # t0 = 16y
+add $t0, $t0, $t0  # t0 = 32y
+add $t0, $t0, $t0  # t0 = 64y
+add $t1, $s1, $s1  # t1 = 2y
+add $t1, $t1, $s1  # t1 = 3
+add $s1, $t0, $t1  # y = 67y
+add $t0, $s0, $s1  # t0 = 15x + 67y
+add $t0, $t0, $t0  # t0 = (15x + 67y)*2
+add $s1, $t0, $t0  # y = (15x + 67y)*4
