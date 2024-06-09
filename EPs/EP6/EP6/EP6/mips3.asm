@@ -1,4 +1,4 @@
-# Associação     x->$s0  y->$s1        # x=3   y=4    y=(15x + 67y) * 4
+# Associacao     x->$s0  y->$s1        # x=3   y=4    y=(15x + 67y) * 4
 ori $s0, $zero, 3  # x = 3
 ori $s1, $zero, 4  # y = 4
 add $t0, $s0, $s0  # t0 = 2x

@@ -1,4 +1,4 @@
-# Associação
+# Associacao
 # x-> $s0    y-> $s1   z-> $s2
 # x=3; y=4; z=(15*x+67*y)*4
 

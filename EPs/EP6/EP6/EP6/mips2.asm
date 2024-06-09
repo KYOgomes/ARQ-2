@@ -1,4 +1,4 @@
-# Associação
+# Associacao
 # x->$s0  y->$s1
 # x=1    y = 5x + 15
 

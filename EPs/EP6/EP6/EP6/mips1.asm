@@ -1,4 +1,4 @@
-# Associacaoo
+# Associacao
 # a->$s0  b->$s1  c->$s2  d->$s3
 # x->$s4  y->$s5
 # a=2  b=3  c=4  d=5

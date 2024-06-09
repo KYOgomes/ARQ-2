@@ -1,4 +1,4 @@
-# Associação
+# Associacao
 # x-> $s0
 # y-> $s1
 # z-> $s2

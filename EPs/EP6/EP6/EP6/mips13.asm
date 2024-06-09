@@ -1,16 +1,24 @@
-#13
-# $ de A: 0x1001.0000
+.data
+A: .word -42   # Exemplo de valor negativo. Pode ser qualquer número
+
 .text
 .globl main
 main:
-lui $t0,0x1001
-lw  $s0,0($t0)  # s0 = A
-srl $t1,$s0,31
-beq $t1,$zero,fim
-sub $s0,$zero,$s0   # A = 0 -(-A) = +A
-sw $s0,0,($t0)
+    # Carregar o valor de A da memória
+    la $t0, A          # Carregar o endereço de A
+    lw $t1, 0($t0)     # Carregar o valor de A em $t1
 
-fim:
+    # Verificar se o valor é negativo
+    bltz $t1, make_positive  # Se $t1 < 0, pular para make_positive
 
-.data
-a: .word -3
+    # Se o valor não é negativo, simplesmente armazenar novamente
+    j end              # Pular para a etiqueta de fim
+
+make_positive:
+    # Tornar o valor positivo
+    sub $t1, $zero, $t1  # $t1 = -$t1 (tornar $t1 positivo)
+
+end:
+    # Armazenar o valor absoluto de volta na memória
+    sw $t1, 0($t0)     # Armazenar o valor de A em memória
+
